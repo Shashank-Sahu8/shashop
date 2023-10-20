@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
 import 'package:finallyshop/search.dart';
 import 'package:finallyshop/cart.dart';
-class account extends StatefulWidget {
-  const account({super.key});
+class categories extends StatefulWidget {
+  const categories({super.key});
 
   @override
-  State<account> createState() => _accountState();
+  State<categories> createState() => _dealsState();
 }
 
-class _accountState extends State<account> {
+class _dealsState extends State<categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,15 +17,14 @@ class _accountState extends State<account> {
         toolbarHeight: 60,
         elevation: 2.0,
         shadowColor: Colors.white38,
-        title: Text("Account",style: TextStyle(color: Colors.black87,fontSize: 24),),
+        title: Text("Deals",style: TextStyle(color: Colors.black87,fontSize: 24),),
         actions: [
-          IconButton(onPressed: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>search()))}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
-          IconButton(onPressed: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>cart()))}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),
-
+          IconButton(highlightColor: Color(0xfffa8128),onPressed: (){showSearch(context: context, delegate: Search());}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
+          IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),
         ],
         backgroundColor: Colors.white,
       ),
-      body: Text("p5"),
+      body: Text("p3"),
     );
   }
 }

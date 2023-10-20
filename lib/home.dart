@@ -55,7 +55,7 @@ class _homeState extends State<home> {
                     ],
                   ),
               GestureDetector(
-                onTap: ()=>{Navigator.push(context,MaterialPageRoute(builder: (context)=>search()))},
+                onTap: () {showSearch(context: context, delegate: Search());},
                 child: new Container(
                   child: new Container(
                     margin:EdgeInsets.only(right: 180) ,

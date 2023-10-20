@@ -6,22 +6,27 @@ class list extends StatefulWidget {
   const list({super.key});
 
   @override
-  State<list> createState() => _listState();
+  State<list> createState() => _dealsState();
 }
 
-class _listState extends State<list> {
+class _dealsState extends State<list> {
   @override
   Widget build(BuildContext context) {
-    appBar: AppBar(
-      toolbarHeight: 60,
-      elevation: 2.0,
-      shadowColor: Colors.white38,
-      title: Text("List",style: TextStyle(color: Colors.black87,fontSize: 24),),
-      actions: [
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 60,
+        elevation: 2.0,
+        shadowColor: Colors.white38,
+        title: Text("Deals",style: TextStyle(color: Colors.black87,fontSize: 24),),
+        actions: [
+          IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{showSearch(context: context, delegate: Search())}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
+          IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),
 
-      ],
-      backgroundColor: Colors.white,
+
+        ],
+        backgroundColor: Colors.white,
+      ),
+      body: Text("p3"),
     );
-    return Scaffold();
   }
 }

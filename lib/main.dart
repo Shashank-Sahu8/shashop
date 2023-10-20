@@ -35,10 +35,9 @@ class _thispageState extends State<thispage> {
   int selitem=0;
   List pages=const[
     home(),
-    categories(),
     deals(),
     cart(),
-    account(),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -68,7 +67,7 @@ class _thispageState extends State<thispage> {
             });
           }
       ),
-    body:pages[selitem] ,
+    body:pages[selitem],
     );
   }
 }
