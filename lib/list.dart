@@ -19,7 +19,7 @@ class _dealsState extends State<list> {
         shadowColor: Colors.white38,
         title: Text("Deals",style: TextStyle(color: Colors.black87,fontSize: 24),),
         actions: [
-          IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{showSearch(context: context, delegate: Search())}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
+          IconButton(highlightColor: Color(0xfffa8128),onPressed: (){showSearch(context: context, delegate: Search());}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
           IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),
 
 

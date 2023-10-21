@@ -6,10 +6,10 @@ class categories extends StatefulWidget {
   const categories({super.key});
 
   @override
-  State<categories> createState() => _dealsState();
+  State<categories> createState() => _categoriesState();
 }
 
-class _dealsState extends State<categories> {
+class _categoriesState extends State<categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _dealsState extends State<categories> {
         toolbarHeight: 60,
         elevation: 2.0,
         shadowColor: Colors.white38,
-        title: Text("Deals",style: TextStyle(color: Colors.black87,fontSize: 24),),
+        title: Text("Categories",style: TextStyle(color: Colors.black87,fontSize: 24),),
         actions: [
           IconButton(highlightColor: Color(0xfffa8128),onPressed: (){showSearch(context: context, delegate: Search());}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
           IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),

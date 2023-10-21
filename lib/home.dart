@@ -7,6 +7,7 @@ import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/search.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 class home extends StatefulWidget {
   const home({super.key});
 
@@ -86,6 +87,7 @@ class _homeState extends State<home> {
           ),
         ),
       ),
+      body: ,
     );
   }
 }

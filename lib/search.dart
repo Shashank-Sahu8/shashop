@@ -31,7 +31,7 @@ class Search extends SearchDelegate{
     return ListView.builder(
         itemCount: matchQuery.length,
         itemBuilder: (context,index){
-          var result=matchQuery[index];
+          var result=matchQuery[index ];
           return ListTile(
             title: Text(result),
           );
