@@ -6,6 +6,7 @@ import 'package:finallyshop/categories.dart';
 import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:finallyshop/Splash_Screen.dart';
 void main()
 {
   runApp(Myapp());
@@ -18,7 +19,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: thispage(),
+      home: Splash_Screen(),
     );
   }
 }

@@ -7,7 +7,9 @@ import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/search.dart';
+import 'package:flutter/animation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:finallyshop/sale1.dart';
 class home extends StatefulWidget {
   const home({super.key});
 
@@ -16,7 +18,17 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
+List imageList =[
+  {"id":1,"image_path":'assets/slider1er.png'},
+  {"id":2,"image_path":'assets/slider2.jpg'},
+  {"id":3,"image_path":'assets/slider3.jfif'},
+  {"id":4,"image_path":'assets/slider4.jfif'},
+  {"id":5,"image_path":'assets/slider5er.jpg'}
+];
 
+final CarouselController carouselController = CarouselController();
+int car_currentindex=0
+;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +99,155 @@ class _homeState extends State<home> {
           ),
         ),
       ),
-      body: ,
+
+      body:
+      SingleChildScrollView(
+       scrollDirection: Axis.vertical,
+      child:Container(
+        child: Column(
+          children: <Widget>[
+             Column(
+              children: [
+                 Stack(
+                  children: [
+                    InkWell(
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()));},
+                      child:  CarouselSlider(
+                        items:  imageList.map(
+                            (item)=>Image.asset(item['image_path'],
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            ),
+                        ) .toList(),
+                        carouselController: carouselController,
+                        options: CarouselOptions(
+                          scrollPhysics: const BouncingScrollPhysics(),
+                          autoPlay: true,
+
+                          aspectRatio: 2,
+                          viewportFraction: 1,
+                          onPageChanged: (index,reason){
+                            setState(() {
+                              car_currentindex=index;
+                            });
+                          }
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+
+
+
+              ],
+            ),
+            Padding(
+            padding: EdgeInsets.only(top: 10,left: 10),
+            child: Column(
+              children: [
+            Align(alignment: Alignment.bottomLeft,child: new Text("Featured Categories",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+            SizedBox(
+              height: 10,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: new Container(
+                height: 90,
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage:AssetImage('assets/shop_cloths.jfif')),
+                          Text("Cloths"),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
+                    InkWell(onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_footwears.jfif'),),
+                          Text("Footwears"),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
+
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_phones.jfif'),),
+                          Text("Phones"),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
+
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_watches.webp'),),
+                          Text("Watches"),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
+
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_beauty.jfif'),),
+                          Text("Beauty Products"),
+                        ],
+                      ),
+                    ),
+
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
+                          Text("Gadgets"),
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            ],
+            ),
+            )
+
+
+
+
+          ],
+        ),
+      ),
+    ),
     );
   }
 }
