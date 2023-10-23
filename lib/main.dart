@@ -7,11 +7,11 @@ import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/Splash_Screen.dart';
+int counter=0;
 void main()
 {
   runApp(Myapp());
 }
-
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
 
@@ -33,6 +33,7 @@ class thispage extends StatefulWidget {
 }
 
 class _thispageState extends State<thispage> {
+
   int selitem=0;
   List pages=const[
     home(),
@@ -53,7 +54,7 @@ class _thispageState extends State<thispage> {
             BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
             BottomNavigationBarItem(icon: Icon(Bootstrap.search_heart_fill),label: "Categories",),
             BottomNavigationBarItem(icon: Icon(Bootstrap.clock_fill),label: "Deals",),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Cart",),
+            BottomNavigationBarItem(icon: Badge(child: Icon(Icons.shopping_cart),label: Text("$counter")),label: "Cart",),
             BottomNavigationBarItem(icon: Icon(Icons.person_2),label: "Account",),
           ],
           selectedFontSize: 12,

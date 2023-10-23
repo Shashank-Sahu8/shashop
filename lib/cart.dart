@@ -1,7 +1,6 @@
 import 'package:finallyshop/search.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-
 class cart extends StatefulWidget {
   const cart({super.key});
 
@@ -20,7 +19,6 @@ class _cartState extends State<cart> {
         title: Text("My Cart",style: TextStyle(color: Colors.black87,fontSize: 24),),
         actions: [
            IconButton(highlightColor: Color(0xfffa8128),onPressed: (){showSearch(context: context, delegate: Search());}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
-           IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Icon(Icons.shopping_cart,color: Colors.blueGrey,size: 30,)),
           
   ],
         backgroundColor: Colors.white,
