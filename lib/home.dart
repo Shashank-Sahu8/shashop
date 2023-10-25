@@ -1,10 +1,17 @@
+import 'package:finallyshop/beauty_product.dart';
 import 'package:finallyshop/cart.dart';
+import 'package:finallyshop/cart_controller.dart';
+import 'package:finallyshop/gadgets.dart';
+import 'package:finallyshop/phone.dart';
+import 'package:finallyshop/watch.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
 import 'package:finallyshop/account.dart';
 import 'package:finallyshop/categories.dart';
 import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/search.dart';
 import 'package:flutter/animation.dart';
@@ -13,6 +20,9 @@ import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
 import 'package:finallyshop/cloth_section.dart';
 import 'package:finallyshop/footwear.dart';
+List<String> product_id=[
+  '11','22','33','44','55','66','77','88'
+];
 List<String> product_image=[
   'assets/silas-sousa-bL9x_AGx7jQ-unsplash-removebg-preview.png','assets/tts-removebg-preview.png','assets/shop_cloth3..png','assets/shop_cloth7-removebg-preview.png','assets/shop_cloth5-removebg-preview.png','assets/shop_cloth6-removebg-preview.png','assets/shop_cloth4-removebg-preview.png','assets/shop_cloth8-removebg-preview.png'
 ];
@@ -36,13 +46,13 @@ class home extends StatefulWidget {
 
 class _homeState extends State<home> {
 List imageList =[
-  {"id":1,"image_path":'assets/slider1er.png'},
-  {"id":2,"image_path":'assets/slider2.jpg'},
-  {"id":3,"image_path":'assets/slider3.jfif'},
-  {"id":4,"image_path":'assets/slider4.jfif'},
-  {"id":5,"image_path":'assets/slider5er.jpg'}
+  {"id":1,"image_path":'assets/slider5er.jpg'},
+  {"id":2,"image_path":'assets/sale4_slider_shop.jpg'},
+  {"id":3,"image_path":'assets/sale3_slider_shop.jpg'},
+  {"id":4,"image_path":'assets/sale_slider_shop.jpg'},
+  {"id":5,"image_path":'assets/sale2_slider_shop.jpg'}
 ];
-
+final cartController=Get.put(CartController());
 final CarouselController carouselController = CarouselController();
 int car_currentindex=0
 ;
@@ -128,7 +138,7 @@ int car_currentindex=0
                  Stack(
                   children: [
                     InkWell(
-                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()));},
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>deals()));},
                       child:  CarouselSlider(
                         items:  imageList.map(
                             (item)=>Image.asset(item['image_path'],
@@ -201,7 +211,7 @@ int car_currentindex=0
 
 
                     InkWell(
-                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>phone()))},
                       child: Column(
                         children: [
                           CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_phones.jfif'),),
@@ -216,7 +226,7 @@ int car_currentindex=0
 
 
                     InkWell(
-                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>watch()))},
                       child: Column(
                         children: [
                           CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_watches.webp'),),
@@ -231,7 +241,7 @@ int car_currentindex=0
 
 
                     InkWell(
-                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>beauty_product()))},
                       child: Column(
                         children: [
                           CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/shop_beauty.jfif'),),
@@ -241,7 +251,7 @@ int car_currentindex=0
                     ),
 
                     InkWell(
-                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>sale1()))},
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>gadgets()))},
                       child: Column(
                         children: [
                           CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
@@ -300,7 +310,18 @@ int car_currentindex=0
                                             child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
                                         ),
                                         SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
+                                        IconButton(onPressed: ()=>{counter++,print("liked press"),
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                Future.delayed(Duration(milliseconds: 400), () {
+                                                  Navigator.of(context).pop(true);
+                                                });
+                                                return AlertDialog(
+                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
+                                                );
+                                              })
+                                        }, icon: Icon(FontAwesome.heart))
                                       ],
                                     ),
                                   ],
@@ -308,8 +329,6 @@ int car_currentindex=0
                                 Text(product_name[i],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
                                 Text(product_discreption[i],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
                                 Text(product_cost[i],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
-
-
                               ],
                             ),
                           ),
@@ -347,7 +366,21 @@ int car_currentindex=0
                                             child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
                                         ),
                                         SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
+                                        IconButton(onPressed: ()=>{
+
+                                          counter++,
+                                          print("liked click"),
+                                          showDialog(
+                                                      context: context,
+                                                      builder: (context) {
+                                                      Future.delayed(Duration(milliseconds: 400), () {
+                                                      Navigator.of(context).pop(true);
+                                                  });
+                                                  return AlertDialog(
+                                                      title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
+                                                  );
+                                        })
+                                        }, icon: Icon(FontAwesome.heart))
                                       ],
                                     ),
                                   ],

@@ -13,6 +13,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
 
+List<String> shoes_image=[
+  'assets/shop_shoes1-removebg-preview.png','assets/shop_shoes2-removebg-preview.png','assets/shop_shoes3-removebg-preview.png','assets/shop_shoes4-removebg-preview.png','assets/shop_shoes5-removebg-preview.png','assets/shop_shoes6-removebg-preview.png'
+];
+List<String> shoes_name=['shoes','shoes','shoes','shoes','shoes','shoes',];
+List<String> shoes_description=['shoeees','sheeoes','sheeoes','shoeees','shoeees','sheeoes',];
+List<String> shoes_cost=['\$33','\$33','\$33','\$33','\$33','\$33',];
+
 class footwear extends StatefulWidget {
   const footwear({super.key});
 
@@ -21,6 +28,7 @@ class footwear extends StatefulWidget {
 }
 
 class _footwearState extends State<footwear> {
+  bool isPressed=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +47,8 @@ class _footwearState extends State<footwear> {
         backgroundColor: Colors.white,
       ),
 
-      body: SingleChildScrollView(
+      body:
+      SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: new Column(
           children: [
@@ -48,7 +57,7 @@ class _footwearState extends State<footwear> {
               padding: const EdgeInsets.all(8.0),
               child: Align(alignment: Alignment.centerLeft,child: Text("Mostly Searched",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
             ),
-            for(int i=0;i<product_image.length;i++,i++)
+            for(int i=0;i<shoes_image.length;i++,i++)
               Column(
                 children: [
                   Row(
@@ -75,25 +84,45 @@ class _footwearState extends State<footwear> {
                                   children: [
                                     Container(
                                         height: 130,
-                                        child: Center(child: Image.asset(product_image[i]))
+                                        child: Center(child: Image.asset(shoes_image[i]))
                                     ),
                                     Row(
                                       children: [
-                                        Container(
-                                            height: 20,
-                                            width: 40,
-                                            decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
-                                            child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
-                                        ),
-                                        SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
+                                        // Container(
+                                        //     height: 20,
+                                        //     width: 40,
+                                        //     decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
+                                        //     child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
+                                        // ),
+                                        //SizedBox(width: 50,),
+                                        IconButton(
+                                          s
+                                          onPressed: ()=>{
+                                            setState(() {
+                                              isPressed=!isPressed;
+                                            }),
+                                          counter++,
+                                          print("liked click"),
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                Future.delayed(Duration(milliseconds: 400), () {
+                                                  Navigator.of(context).pop(true);
+                                                });
+                                                return AlertDialog(
+                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
+                                                );
+                                              })},
+                                            icon: Icon(FontAwesome.heart),
+                                            style: ButtonStyle(),
+                                        )
                                       ],
                                     ),
                                   ],
                                 ),
-                                Text(product_name[i],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
-                                Text(product_discreption[i],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
-                                Text(product_cost[i],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
+                                Text(shoes_name[i],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
+                                Text(shoes_description[i],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
+                                Text(shoes_cost[i],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
 
 
                               ],
@@ -122,25 +151,38 @@ class _footwearState extends State<footwear> {
                                   children: [
                                     Container(
                                         height: 130,
-                                        child: Center(child: Image.asset(product_image[i+1]))
+                                        child: Center(child: Image.asset(shoes_image[i+1]))
                                     ),
                                     Row(
                                       children: [
-                                        Container(
-                                            height: 20,
-                                            width: 40,
-                                            decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
-                                            child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
-                                        ),
-                                        SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
+                                        // Container(
+                                        //     height: 20,
+                                        //     width: 40,
+                                        //     decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
+                                        //     child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
+                                        // ),
+                                        //SizedBox(width: 50,),
+                                        IconButton(onPressed: ()=>{
+
+                                          counter++,
+                                          print("liked click"),
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                Future.delayed(Duration(milliseconds: 400), () {
+                                                  Navigator.of(context).pop(true);
+                                                });
+                                                return AlertDialog(
+                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
+                                                );
+                                              })}, icon: Icon(FontAwesome.heart))
                                       ],
                                     ),
                                   ],
                                 ),
-                                Text(product_name[i+1],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
-                                Text(product_discreption[i+1],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
-                                Text(product_cost[i+1],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
+                                Text(shoes_name[i+1],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
+                                Text(shoes_description[i+1],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
+                                Text(shoes_cost[i+1],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
 
 
                               ],

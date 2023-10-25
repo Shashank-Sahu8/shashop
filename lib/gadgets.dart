@@ -14,25 +14,26 @@ import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
 
 
-class cloth_Section extends StatefulWidget {
-  const cloth_Section({super.key});
+class gadgets extends StatefulWidget {
+  const gadgets({super.key});
 
   @override
-  State<cloth_Section> createState() => _cloth_SectionState();
+  State<gadgets> createState() => _gadgetsState();
 }
 
-class _cloth_SectionState extends State<cloth_Section> {
+class _gadgetsState extends State<gadgets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         leading: BackButton(color: Colors.blueGrey,),
         toolbarHeight: 60,
         elevation: 2.0,
         shadowColor: Colors.white38,
         title: Align(
-          alignment: Alignment.bottomLeft,
-            child: Text("Cloths Section",style: TextStyle(color: Colors.black87,fontSize: 24),)),
+            alignment: Alignment.bottomLeft,
+            child: Text("Footwear",style: TextStyle(color: Colors.black87,fontSize: 24),)),
         actions: [
           IconButton(highlightColor: Color(0xfffa8128),onPressed: (){showSearch(context: context, delegate: Search());}, icon: Icon(Icons.search,color: Colors.blueGrey,size: 30,)),
           IconButton(highlightColor: Color(0xfffa8128),onPressed: ()=>{}, icon: Badge(child: Icon(Icons.shopping_cart,size: 30,color: Colors.blueGrey,),label: Text("$counter"))),
@@ -87,17 +88,7 @@ class _cloth_SectionState extends State<cloth_Section> {
                                             child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
                                         ),
                                         SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{counter++,print("${product_id[i]}"),
-                                          showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                Future.delayed(Duration(milliseconds: 400), () {
-                                                  Navigator.of(context).pop(true);
-                                                });
-                                                return AlertDialog(
-                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
-                                                );
-                                              })}, icon: Icon(FontAwesome.heart))
+                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
                                       ],
                                     ),
                                   ],
@@ -144,17 +135,7 @@ class _cloth_SectionState extends State<cloth_Section> {
                                             child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
                                         ),
                                         SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{counter++,print("liked click"),
-                                          showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                Future.delayed(Duration(milliseconds: 400), () {
-                                                  Navigator.of(context).pop(true);
-                                                });
-                                                return AlertDialog(
-                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
-                                                );
-                                              })}, icon: Icon(FontAwesome.heart))
+                                        IconButton(onPressed: ()=>{}, icon: Icon(FontAwesome.heart))
                                       ],
                                     ),
                                   ],
@@ -181,7 +162,6 @@ class _cloth_SectionState extends State<cloth_Section> {
           ],
         ),
       ),
-
     );
   }
 }

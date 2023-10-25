@@ -1,6 +1,7 @@
 import 'package:finallyshop/search.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
+
 class cart extends StatefulWidget {
   const cart({super.key});
 
@@ -9,6 +10,9 @@ class cart extends StatefulWidget {
 }
 
 class _cartState extends State<cart> {
+  void idd(indexx){
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

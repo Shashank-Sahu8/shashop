@@ -33,7 +33,6 @@ class thispage extends StatefulWidget {
 }
 
 class _thispageState extends State<thispage> {
-
   int selitem=0;
   List pages=const[
     home(),

@@ -31,9 +31,9 @@ class Search extends SearchDelegate{
     return ListView.builder(
         itemCount: matchQuery.length,
         itemBuilder: (context,index){
-          var result=matchQuery[index ];
+          var result=matchQuery[index];
           return ListTile(
-            title: Text(result),
+            title: Align(alignment: Alignment.bottomLeft,child: TextButton(onPressed: (){},child:Text(result,style: TextStyle(color: Colors.blueGrey,fontWeight:FontWeight.normal,fontSize: 16),) )),
           );
         }
     );
@@ -49,7 +49,7 @@ class Search extends SearchDelegate{
         itemBuilder: (context,index){
           var result=matchQuery[index];
           return ListTile(
-            title: Text(result),
+            title: Align(alignment: Alignment.bottomLeft,child: TextButton(onPressed: (){},child:Text(result,style: TextStyle(color: Colors.blueGrey),),)),
           );
         }
     );
