@@ -1,4 +1,5 @@
 import 'package:finallyshop/cart.dart';
+import 'package:finallyshop/model.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/home.dart';
 import 'package:finallyshop/account.dart';
@@ -7,6 +8,7 @@ import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/Splash_Screen.dart';
+import 'package:provider/provider.dart';
 int counter=0;
 void main()
 {
@@ -17,9 +19,14 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Splash_Screen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: Products())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Splash_Screen(),
+      ),
     );
   }
 }

@@ -96,7 +96,6 @@ class _footwearState extends State<footwear> {
                                         // ),
                                         //SizedBox(width: 50,),
                                         IconButton(
-                                          s
                                           onPressed: ()=>{
                                             setState(() {
                                               isPressed=!isPressed;

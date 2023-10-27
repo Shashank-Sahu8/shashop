@@ -12,8 +12,8 @@ import 'package:flutter/animation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
-
-
+import 'package:provider/provider.dart';
+import 'package:finallyshop/model.dart';
 class cloth_Section extends StatefulWidget {
   const cloth_Section({super.key});
 
