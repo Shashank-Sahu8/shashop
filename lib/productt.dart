@@ -15,7 +15,7 @@ class allproductscl extends StatelessWidget {
         physics: ScrollPhysics(),
         itemCount: pro.length,
         padding: EdgeInsets.all(10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 5,crossAxisSpacing: 10,mainAxisExtent: 200),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 7,crossAxisSpacing: 10,mainAxisExtent: 260),
       itemBuilder: (context, index) => ChangeNotifierProvider.value(value: pro[index],child: product_item(name: pro[index].name,image: pro[index].image,description: pro[index].description,cost: pro[index].cost,),),
     );
   }

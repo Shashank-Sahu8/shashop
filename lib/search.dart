@@ -6,15 +6,19 @@ import 'package:finallyshop/cart.dart';
 import 'package:finallyshop/categories.dart';
 import 'package:finallyshop/deals.dart';
 import 'package:finallyshop/list.dart';
+import 'package:finallyshop/model.dart';
+import 'package:get/get.dart';
 
-
-
+import 'package:provider/provider.dart';
 class Search extends SearchDelegate{
   List<String>allData=['Tools','Watches','Grocery','mobile','Iphone','Accessories','cloths','mens','Womens','Children','Books','Bag','Perfumes','Toys'];
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
-      IconButton(onPressed: (){query='';}, icon: Icon(Icons.clear))
+      IconButton(
+          onPressed: (){query='';},
+          icon:const Icon(Icons.clear)
+      )
     ];
   }
   @override
@@ -23,36 +27,38 @@ class Search extends SearchDelegate{
   }
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String>matchQuery=[];
-    for(var item in allData){
-      if(item.toLowerCase().contains(query.toLowerCase())){
-        matchQuery.add(item);
-      }}
-    return ListView.builder(
-        itemCount: matchQuery.length,
+    final productlis=Provider.of<Products>(context);
+    final prod=query.isEmpty? productlis.items:productlis.items.where((p) => p.name.startsWith(query[0].toUpperCase())).toList();
+    return prod.isEmpty?Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text('No such result found...',style: TextStyle(color: Colors.grey,fontSize: 18),),
+    ): ListView.builder(
+      itemCount: prod.length,
         itemBuilder: (context,index){
-          var result=matchQuery[index];
-          return ListTile(
-            title: Align(alignment: Alignment.bottomLeft,child: TextButton(onPressed: (){},child:Text(result,style: TextStyle(color: Colors.blueGrey,fontWeight:FontWeight.normal,fontSize: 16),) )),
-          );
+        return ListTile(
+          onTap: (){showResults(context);},
+          title: Padding(
+          padding: const EdgeInsets.only(top:6.0,),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(prod[index].name,style: TextStyle(fontSize: 15),),
+                  Text(prod[index].id),
+                ],
+              ),
+              Align(alignment: Alignment.centerLeft,child: Text(prod[index].description,style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),)),
+              Divider(color: Colors.grey,)
+            ],
+          ),
+        ),);
         }
     );
   }
   @override
   Widget buildResults(BuildContext context) {
-    List<String>matchQuery=[];
-    for(var item in allData)
-      if(item.toLowerCase().contains(query.toLowerCase())){
-        matchQuery.add(item);
-      }
-    return ListView.builder(
-        itemBuilder: (context,index){
-          var result=matchQuery[index];
-          return ListTile(
-            title: Align(alignment: Alignment.bottomLeft,child: TextButton(onPressed: (){},child:Text(result,style: TextStyle(color: Colors.blueGrey),),)),
-          );
-        }
-    );
+   return Center(child: Text(query,style: TextStyle(color: Colors.grey,fontSize: 20),),);
   }
 
 }

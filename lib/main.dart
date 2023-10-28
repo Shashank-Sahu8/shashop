@@ -9,7 +9,9 @@ import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/Splash_Screen.dart';
 import 'package:provider/provider.dart';
+import 'package:finallyshop/home.dart';
 int counter=0;
+bool _switchValue=true;
 void main()
 {
   runApp(Myapp());
@@ -24,6 +26,9 @@ class Myapp extends StatelessWidget {
         ChangeNotifierProvider.value(value: Products())
       ],
       child: MaterialApp(
+        //theme: _switchValue? ThemeData(brightness: Brightness.light,primarySwatch: Colors.blueGrey):ThemeData(brightness: Brightness.dark,primarySwatch: Colors.blueGrey),
+        darkTheme: ThemeData(brightness: Brightness.dark,primarySwatch: Colors.blueGrey),
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         home: Splash_Screen(),
       ),
@@ -51,7 +56,6 @@ class _thispageState extends State<thispage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       bottomNavigationBar:  BottomNavigationBar(
 
           type: BottomNavigationBarType.fixed,
@@ -80,3 +84,6 @@ class _thispageState extends State<thispage> {
     );
   }
 }
+
+
+

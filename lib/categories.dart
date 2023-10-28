@@ -8,7 +8,6 @@ import 'package:finallyshop/footwear.dart';
 import 'package:finallyshop/phone.dart';
 import 'package:finallyshop/watch.dart';
 import 'package:finallyshop/beauty_product.dart';
-
 class categories extends StatefulWidget {
   const categories({super.key});
 

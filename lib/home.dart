@@ -3,6 +3,7 @@ import 'package:finallyshop/cart.dart';
 import 'package:finallyshop/cart_controller.dart';
 import 'package:finallyshop/gadgets.dart';
 import 'package:finallyshop/phone.dart';
+import 'package:finallyshop/productt.dart';
 import 'package:finallyshop/watch.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
@@ -20,6 +21,8 @@ import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
 import 'package:finallyshop/cloth_section.dart';
 import 'package:finallyshop/footwear.dart';
+import 'package:finallyshop/main.dart';
+bool _switchValue =true;
 List<String> product_id=[
   '11','22','33','44','55','66','77','88'
 ];
@@ -70,12 +73,18 @@ int car_currentindex=0
                   color: Color(0xff536878),
                   size: 33,
                 )),
-            IconButton(
-                highlightColor: Color(0xfffa8128),
-                onPressed: ()=>cart(),
-                icon: Icon(Icons.shopping_cart,
-                  color: Colors.white54,
-                ))
+
+            Switch(
+            value:_switchValue,
+            activeColor: Colors.black,
+            inactiveThumbColor: Colors.white,
+            inactiveTrackColor: Colors.grey,
+            activeTrackColor: Colors.grey,
+            inactiveThumbImage: AssetImage('assets/pngwing.com.png'),
+            activeThumbImage: AssetImage('assets/moon.jpg'),
+            onChanged:(newValue)
+            {_switchValue=newValue;}
+            )
           ],
         ),
         ],
@@ -91,14 +100,14 @@ int car_currentindex=0
                       new Text("shashop",style: TextStyle(color: Colors.black,fontSize: 35,fontFamily: 'FjallaOne'
                           ''),),
                       SizedBox(width: 7,),
-                      CircleAvatar(radius:22,backgroundColor: Color(0xfffa8128),child: Text("S",style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'TiltNeon',fontWeight: FontWeight.bold),),)
+                      CircleAvatar(radius:22,backgroundColor: Color(0xfffa8128),child: Text("S",style: TextStyle(color: Colors.white,fontSize: 30,fontFamily: 'TiltNeon',fontWeight: FontWeight.bold),),)
                     ],
                   ),
               GestureDetector(
                 onTap: () {showSearch(context: context, delegate: Search());},
                 child: new Container(
                   child: new Container(
-                    margin:EdgeInsets.only(right: 180) ,
+                    margin:EdgeInsets.only(right: 170) ,
                     child: Row(
                       children: [
                         Icon(Icons.search,color: Colors.grey,),
@@ -272,136 +281,7 @@ int car_currentindex=0
               padding: const EdgeInsets.all(8.0),
               child: Align(alignment: Alignment.centerLeft,child: Text("Top",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
             ),
-            for(int i=0;i<product_image.length;i++,i++)
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          height: 200,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                              border: Border.all(width: 0.4,color: Colors.grey),
-                              borderRadius: BorderRadius.circular(15),
-                              boxShadow:[BoxShadow(color:Colors.grey,spreadRadius: 0.5,blurRadius: 5)],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Column(
-                              children: [
-
-
-                                Stack(
-                                  children: [
-                                   Container(
-                                      height: 130,
-                                      child: Center(child: Image.asset(product_image[i]))
-                                  ),
-                                    Row(
-                                      children: [
-                                        Container(
-                                            height: 20,
-                                            width: 40,
-                                            decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
-                                            child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
-                                        ),
-                                        SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{counter++,print("liked press"),
-                                          showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                Future.delayed(Duration(milliseconds: 400), () {
-                                                  Navigator.of(context).pop(true);
-                                                });
-                                                return AlertDialog(
-                                                  title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
-                                                );
-                                              })
-                                        }, icon: Icon(FontAwesome.heart))
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Text(product_name[i],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
-                                Text(product_discreption[i],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
-                                Text(product_cost[i],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          height: 200,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(width: 0.4,color: Colors.grey),
-                            borderRadius: BorderRadius.circular(15),
-                            boxShadow:[BoxShadow(color:Colors.grey,spreadRadius: 0.5,blurRadius: 5)],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Column(
-                              children: [
-
-
-                                Stack(
-                                  children: [
-                                    Container(
-                                        height: 130,
-                                        child: Center(child: Image.asset(product_image[i+1]))
-                                    ),
-                                    Row(
-                                      children: [
-                                        Container(
-                                            height: 20,
-                                            width: 40,
-                                            decoration: BoxDecoration(color: Colors.deepOrangeAccent,borderRadius:BorderRadius.all(Radius.circular(5)) ),
-                                            child: Center(child: Text("-50%",style: TextStyle(color: Colors.white,fontSize: 10),))
-                                        ),
-                                        SizedBox(width: 50,),
-                                        IconButton(onPressed: ()=>{
-
-                                          counter++,
-                                          print("liked click"),
-                                          showDialog(
-                                                      context: context,
-                                                      builder: (context) {
-                                                      Future.delayed(Duration(milliseconds: 400), () {
-                                                      Navigator.of(context).pop(true);
-                                                  });
-                                                  return AlertDialog(
-                                                      title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
-                                                  );
-                                        })
-                                        }, icon: Icon(FontAwesome.heart))
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Text(product_name[i+1],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),),
-                                Text(product_discreption[i+1],style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
-                                Text(product_cost[i+1],style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
-
-
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-
-
-
-                    ],
-                  )
-                ],
-              ),
+            Container(margin:EdgeInsets.only(top: 5),height:1100,child: allproductscl())
 
 
 
@@ -413,3 +293,7 @@ int car_currentindex=0
     );
   }
 }
+
+
+
+
