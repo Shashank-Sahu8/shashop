@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "309063523457",
+    "project_id": "shashop-46771",
+    "storage_bucket": "shashop-46771.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309063523457:android:e30c9f353b8377fedf8180",
+        "android_client_info": {
+          "package_name": "com.example.finallyshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbnX7TGXi-LgT_5n7A6PWlZt2ipTpJmrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
