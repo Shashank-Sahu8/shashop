@@ -18,7 +18,7 @@ class clothss extends StatelessWidget {
       itemCount: pro.length,
       padding: EdgeInsets.all(10),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 7,crossAxisSpacing: 10,mainAxisExtent: 281,childAspectRatio: 0.7),
-      itemBuilder: (context, index) => ChangeNotifierProvider.value(value: pro[index],child: product_item(name: pro[index].name,image: pro[index].image,description: pro[index].description,cost: pro[index].cost,oldcost: pro[index].oldcost,),),
+      itemBuilder: (context, index) => ChangeNotifierProvider.value(value: pro[index],child: product_item(name: pro[index].name, image: pro[index].image, description: pro[index].description, cost: pro[index].cost, oldcost: pro[index].oldcost, image2: pro[index].image2, image3: pro[index].image3, image4: pro[index].image4, productModel: pro[index].productModel),),
     );
   }
 }

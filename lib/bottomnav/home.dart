@@ -304,7 +304,7 @@ int car_currentindex=0
                 ],
               ),
             ),
-                Padding(padding: EdgeInsets.only(top: 5),child: trending(),),
+                Padding(padding: EdgeInsets.all(5),child: trending(),),
            // SingleChildScrollView(
            //   scrollDirection: Axis.horizontal,
            //   child: Padding(padding: EdgeInsets.only(top: 5),child: trending(),),

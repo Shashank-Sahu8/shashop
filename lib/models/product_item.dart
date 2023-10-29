@@ -8,14 +8,27 @@ import 'package:finallyshop/categoriesnav/beauty_product.dart';
 import 'package:finallyshop/categoriesdis/allproduct.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/categoriesdis/allproduct.dart';
+import 'package:finallyshop/models/detailproduct.dart';
+bool ch=false;
+
 class product_item extends StatefulWidget {
-  product_item({super.key, required this.name, required this.image, required this.description, required this.cost, required this.oldcost});
-  final String name;
-  final String image;
-  final String description;
+
+  product_item({super.key, required this.name, required this.image, required this.description, required this.cost, required this.oldcost, required this.image2, required this.image3, required this.image4, required this.productModel});
+  // final String name;
+  // final String image;
+  // final String description;
+  // final String cost;
+  // final String oldcost;
+  //
   final String cost;
   final String oldcost;
+  final String description;
+  final String image;
+  final String image2;
+  final String image3;
+  final String image4;
+  final String productModel;
+  final String name;
 
   @override
   State<product_item> createState() => _product_itemState();
@@ -25,7 +38,7 @@ class _product_itemState extends State<product_item> {
   @override
   Widget build(BuildContext context) {
        return InkWell(
-         onTap:()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>cloth_Section()))},
+         onTap:()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>detailproduct(cost:widget.cost , oldcost: widget.oldcost, description: widget.description, image: widget.image, image2: widget.image2, image3: widget.image3, image4: widget.image4, productModel: widget.productModel, name: widget.name)))},
          child: Container(
           decoration: BoxDecoration(
             border: Border.all(width: 0.7,color: Colors.grey),
@@ -37,9 +50,11 @@ class _product_itemState extends State<product_item> {
               children: [
                 Stack(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),image: DecorationImage(image: NetworkImage(widget.image),fit: BoxFit.cover)),
-                        height:150,width: 500
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),image: DecorationImage(image: NetworkImage(widget.image),fit: BoxFit.cover)),
+                          height:150,width: 500
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,6 +67,7 @@ class _product_itemState extends State<product_item> {
                         ),
                         IconButton(onPressed: ()=>{
                           setState((){
+                            ch=!ch;
                           showDialog(
                           context: context,
                           builder: (context) {
@@ -60,12 +76,13 @@ class _product_itemState extends State<product_item> {
                           });
                           return AlertDialog(
                           title: Row(children: [Icon(FontAwesome.circle_check,color: Colors.green,),SizedBox(width: 10,),Text('Added to cart')],),
+
                           );
                           });
                           counter++;
                           })
                         },
-                            icon: Icon(FontAwesome.heart,color: Colors.blueGrey,))
+                            icon: Icon(Bootstrap.heart_fill,color: (ch==false)?Colors.blueGrey:Colors.red,))
                       ],
                     ),
                   ],
