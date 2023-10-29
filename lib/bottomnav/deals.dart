@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/search.dart';
-import 'package:finallyshop/cart.dart';
+import 'package:finallyshop/pages/search.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
 class deals extends StatefulWidget {
   const deals({super.key});
 

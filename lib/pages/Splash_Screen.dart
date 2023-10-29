@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/home.dart';
+import 'package:finallyshop/bottomnav/home.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 class Splash_Screen extends StatefulWidget {

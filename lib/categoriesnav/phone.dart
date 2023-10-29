@@ -1,18 +1,18 @@
-import 'package:finallyshop/cart.dart';
-import 'package:finallyshop/home.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
+import 'package:finallyshop/bottomnav/home.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/account.dart';
-import 'package:finallyshop/categories.dart';
-import 'package:finallyshop/deals.dart';
+import 'package:finallyshop/bottomnav/account.dart';
+import 'package:finallyshop/bottomnav/categories.dart';
+import 'package:finallyshop/bottomnav/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:finallyshop/search.dart';
+import 'package:finallyshop/pages/search.dart';
 import 'package:flutter/animation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
-import 'package:finallyshop/productt.dart';
+import 'package:finallyshop/categoriesdis/allproduct.dart';
 class phone extends StatefulWidget {
   const phone({super.key});
 
@@ -48,7 +48,7 @@ class _phoneState extends State<phone> {
               padding: const EdgeInsets.only(top:15.0,left: 10),
               child: Align(alignment: Alignment.centerLeft,child: Text("Mostly Searched",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),)),
             ),
-            Container(margin:EdgeInsets.only(top: 5),height:100,child: allproductscl())
+            Padding(padding: EdgeInsets.only(top: 5),child: allproductscl(),)
 
           ],
         ),

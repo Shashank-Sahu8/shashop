@@ -1,28 +1,31 @@
-import 'package:finallyshop/beauty_product.dart';
-import 'package:finallyshop/cart.dart';
+import 'package:finallyshop/categoriesdis/trending.dart';
+import 'package:finallyshop/categoriesnav/beauty_product.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
 import 'package:finallyshop/cart_controller.dart';
-import 'package:finallyshop/gadgets.dart';
-import 'package:finallyshop/phone.dart';
-import 'package:finallyshop/productt.dart';
-import 'package:finallyshop/watch.dart';
+import 'package:finallyshop/categoriesnav/accessories.dart';
+import 'package:finallyshop/categoriesnav/phone.dart';
+import 'package:finallyshop/categoriesdis/allproduct.dart';
+import 'package:finallyshop/categoriesnav/watch.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/account.dart';
-import 'package:finallyshop/categories.dart';
-import 'package:finallyshop/deals.dart';
+import 'package:finallyshop/bottomnav/account.dart';
+import 'package:finallyshop/bottomnav/categories.dart';
+import 'package:finallyshop/bottomnav/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:finallyshop/search.dart';
+import 'package:finallyshop/pages/search.dart';
 import 'package:flutter/animation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
-import 'package:finallyshop/cloth_section.dart';
-import 'package:finallyshop/footwear.dart';
+import 'package:finallyshop/categoriesnav/cloth_section.dart';
+import 'package:finallyshop/categoriesnav/footwear.dart';
 import 'package:finallyshop/main.dart';
-bool _switchValue =true;
+import 'package:finallyshop/temperory.dart';
+
+bool _switchValue=true;
 List<String> product_id=[
   '11','22','33','44','55','66','77','88'
 ];
@@ -66,6 +69,15 @@ int car_currentindex=0
         toolbarHeight: 110,
         actions: [Column(
           children: [
+            Switch(
+                value:_switchValue,
+                activeColor: Colors.white,
+                inactiveThumbColor: Colors.black12,
+                inactiveTrackColor: Colors.grey,
+                activeTrackColor: Colors.grey,
+                onChanged:(newValue)
+                {_switchValue=newValue;}
+            ),
             IconButton(
                 highlightColor: Color(0xfffa8128),
                 onPressed: ()=>{},
@@ -74,17 +86,7 @@ int car_currentindex=0
                   size: 33,
                 )),
 
-            Switch(
-            value:_switchValue,
-            activeColor: Colors.black,
-            inactiveThumbColor: Colors.white,
-            inactiveTrackColor: Colors.grey,
-            activeTrackColor: Colors.grey,
-            inactiveThumbImage: AssetImage('assets/pngwing.com.png'),
-            activeThumbImage: AssetImage('assets/moon.jpg'),
-            onChanged:(newValue)
-            {_switchValue=newValue;}
-            )
+
           ],
         ),
         ],
@@ -218,6 +220,20 @@ int car_currentindex=0
                       width: 10,
                     ),
 
+                    InkWell(
+                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>gadgets()))},
+                      child: Column(
+                        children: [
+                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
+                          Text("Accessories"),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+
 
                     InkWell(
                       onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>phone()))},
@@ -259,15 +275,7 @@ int car_currentindex=0
                       ),
                     ),
 
-                    InkWell(
-                      onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>gadgets()))},
-                      child: Column(
-                        children: [
-                          CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
-                          Text("Gadgets"),
-                        ],
-                      ),
-                    ),
+
 
                   ],
                 ),
@@ -281,8 +289,26 @@ int car_currentindex=0
               padding: const EdgeInsets.all(8.0),
               child: Align(alignment: Alignment.centerLeft,child: Text("Top",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
             ),
-            Container(margin:EdgeInsets.only(top: 5),height:1100,child: allproductscl())
+            Padding(padding:EdgeInsets.only(top: 5),child: allproductscl(),),
+            SizedBox(height: 5,),
+            Divider(color: Colors.grey,),
 
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                    Text("Trending",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                    TextButton(onPressed: (){}, child: Text("Show all",style: TextStyle(fontSize:15),))
+                ],
+              ),
+            ),
+                Padding(padding: EdgeInsets.only(top: 5),child: trending(),),
+           // SingleChildScrollView(
+           //   scrollDirection: Axis.horizontal,
+           //   child: Padding(padding: EdgeInsets.only(top: 5),child: trending(),),
+           // )
 
 
 

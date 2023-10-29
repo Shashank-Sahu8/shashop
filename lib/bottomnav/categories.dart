@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/search.dart';
-import 'package:finallyshop/cart.dart';
-import 'package:finallyshop/gadgets.dart';
-import 'package:finallyshop/cloth_section.dart';
-import 'package:finallyshop/footwear.dart';
-import 'package:finallyshop/phone.dart';
-import 'package:finallyshop/watch.dart';
-import 'package:finallyshop/beauty_product.dart';
+import 'package:finallyshop/pages/search.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
+import 'package:finallyshop/categoriesnav/accessories.dart';
+import 'package:finallyshop/categoriesnav/cloth_section.dart';
+import 'package:finallyshop/categoriesnav/footwear.dart';
+import 'package:finallyshop/categoriesnav/phone.dart';
+import 'package:finallyshop/categoriesnav/watch.dart';
+import 'package:finallyshop/categoriesnav/beauty_product.dart';
 class categories extends StatefulWidget {
   const categories({super.key});
 
@@ -54,6 +54,21 @@ class _categoriesState extends State<categories> {
               SizedBox(
                 width: 10,
               ),
+              Divider(color: Colors.blueGrey),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: InkWell(
+                  onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>gadgets()))},
+                  child: Row(
+                    children: [
+                      CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
+                      SizedBox(width: 15,),
+                      Text("Accessories",style: TextStyle(fontSize: 21,)),
+                    ],
+                  ),
+                ),
+              ),
+
               Divider(color: Colors.blueGrey),
               Padding(
                 padding: const EdgeInsets.all(10),
@@ -124,20 +139,7 @@ class _categoriesState extends State<categories> {
                 ),
               ),
               Divider(color: Colors.blueGrey),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: InkWell(
-                  onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context)=>gadgets()))},
-                  child: Row(
-                    children: [
-                      CircleAvatar(backgroundColor: Colors.black,radius: 35,backgroundImage: AssetImage('assets/gadgets.jfif'),),
-                      SizedBox(width: 15,),
-                      Text("Gadgets",style: TextStyle(fontSize: 21,)),
-                    ],
-                  ),
-                ),
-              ),
-              Divider(color: Colors.blueGrey),
+
             ],
           ),
         ),

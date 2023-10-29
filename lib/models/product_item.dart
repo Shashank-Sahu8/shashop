@@ -1,20 +1,21 @@
 import 'dart:math';
-import 'package:finallyshop/cloth_section.dart';
-import 'package:finallyshop/home.dart';
+import 'package:finallyshop/categoriesnav/cloth_section.dart';
+import 'package:finallyshop/bottomnav/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'productt.dart';
-import 'package:finallyshop/beauty_product.dart';
-import 'package:finallyshop/productt.dart';
+import '../categoriesdis/allproduct.dart';
+import 'package:finallyshop/categoriesnav/beauty_product.dart';
+import 'package:finallyshop/categoriesdis/allproduct.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/productt.dart';
+import 'package:finallyshop/categoriesdis/allproduct.dart';
 class product_item extends StatefulWidget {
-  product_item({super.key, required this.name, required this.image, required this.description, required this.cost});
+  product_item({super.key, required this.name, required this.image, required this.description, required this.cost, required this.oldcost});
   final String name;
   final String image;
   final String description;
   final String cost;
+  final String oldcost;
 
   @override
   State<product_item> createState() => _product_itemState();
@@ -31,11 +32,13 @@ class _product_itemState extends State<product_item> {
             borderRadius: BorderRadius.circular(5),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
                 Stack(
                   children: [
                     Container(
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover)),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),image: DecorationImage(image: NetworkImage(widget.image),fit: BoxFit.cover)),
                         height:150,width: 500
                     ),
                     Row(
@@ -68,7 +71,7 @@ class _product_itemState extends State<product_item> {
                   ],
                 ),
                 SizedBox(height: 5,),
-                Text(widget.name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                Text(widget.name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),textAlign: TextAlign.center),
                 SizedBox(height: 5,),
                 Text(widget.description,style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),),
                 SizedBox(height: 5,),
@@ -76,16 +79,17 @@ class _product_itemState extends State<product_item> {
                   child: Row(
                     children: [
                       SizedBox(width: 10,),
-                      Icon(Bootstrap.currency_rupee,color: Colors.green,size: 18,),
+                      Icon(Bootstrap.currency_rupee,color: Colors.green,size: 19,),
                       Text(widget.cost,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                       SizedBox(width: 20,),
                       Text("M.R.P:",style: TextStyle(color: Colors.blueGrey),),
-                      Row(
-                        children: [
-                          Icon(Icons.currency_rupee,color: Colors.grey,size: 15,),
-                          Text(widget.cost,style: TextStyle(decoration: TextDecoration.lineThrough,color: Colors.blueGrey),),
-                        ],
-                      ),
+                      Text("\u{20B9}${widget.oldcost}",style: TextStyle(decoration: TextDecoration.lineThrough,color: Colors.blueGrey),)
+                      // Row(
+                      //   children: [
+                      //     Icon(Icons.currency_rupee,color: Colors.grey,size: 15,),
+                      //     Text(widget.cost,style: TextStyle(decoration: TextDecoration.lineThrough,color: Colors.blueGrey),),
+                      //   ],
+                      // ),
                       
                     ],
                   ),

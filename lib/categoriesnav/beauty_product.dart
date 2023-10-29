@@ -1,19 +1,19 @@
 
-import 'package:finallyshop/cart.dart';
-import 'package:finallyshop/home.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
+import 'package:finallyshop/bottomnav/home.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/account.dart';
-import 'package:finallyshop/categories.dart';
-import 'package:finallyshop/deals.dart';
+import 'package:finallyshop/bottomnav/account.dart';
+import 'package:finallyshop/bottomnav/categories.dart';
+import 'package:finallyshop/bottomnav/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:finallyshop/search.dart';
+import 'package:finallyshop/pages/search.dart';
 import 'package:flutter/animation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finallyshop/sale1.dart';
 import 'package:flutter/animation.dart';
-import 'package:finallyshop/productt.dart';
+import 'package:finallyshop/categoriesdis/allproduct.dart';
 class beauty_product extends StatefulWidget {
   const beauty_product({super.key});
 

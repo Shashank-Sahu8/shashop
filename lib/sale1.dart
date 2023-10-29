@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finallyshop/home.dart';
+import 'package:finallyshop/bottomnav/home.dart';
 import 'package:badges/badges.dart';
 
 class sale1 extends StatefulWidget {

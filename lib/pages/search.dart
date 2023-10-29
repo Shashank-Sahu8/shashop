@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
-import 'package:finallyshop/home.dart';
-import 'package:finallyshop/account.dart';
-import 'package:finallyshop/cart.dart';
-import 'package:finallyshop/categories.dart';
-import 'package:finallyshop/deals.dart';
+import 'package:finallyshop/bottomnav/home.dart';
+import 'package:finallyshop/bottomnav/account.dart';
+import 'package:finallyshop/bottomnav/cart.dart';
+import 'package:finallyshop/bottomnav/categories.dart';
+import 'package:finallyshop/bottomnav/deals.dart';
 import 'package:finallyshop/list.dart';
-import 'package:finallyshop/model.dart';
+import 'package:finallyshop/models/model.dart';
 import 'package:get/get.dart';
 
 import 'package:provider/provider.dart';
@@ -28,7 +28,7 @@ class Search extends SearchDelegate{
   @override
   Widget buildSuggestions(BuildContext context) {
     final productlis=Provider.of<Products>(context);
-    final prod=query.isEmpty? productlis.items:productlis.items.where((p) => p.name.startsWith(query[0].toUpperCase())).toList();
+    final prod=query.isEmpty? productlis.allProduct:productlis.allProduct.where((p) => p.name.startsWith(query[0].toUpperCase())).toList();
     return prod.isEmpty?Padding(
       padding: const EdgeInsets.all(10.0),
       child: Text('No such result found...',style: TextStyle(color: Colors.grey,fontSize: 18),),
@@ -45,7 +45,7 @@ class Search extends SearchDelegate{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(prod[index].name,style: TextStyle(fontSize: 15),),
-                  Text(prod[index].id),
+                  Text(prod[index].productModel),
                 ],
               ),
               Align(alignment: Alignment.centerLeft,child: Text(prod[index].description,style: TextStyle(fontSize: 12,color: Colors.deepOrangeAccent),)),

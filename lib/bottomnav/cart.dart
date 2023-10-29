@@ -1,4 +1,4 @@
-import 'package:finallyshop/search.dart';
+import 'package:finallyshop/pages/search.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/main.dart';
 
