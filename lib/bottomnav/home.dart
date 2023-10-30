@@ -25,6 +25,8 @@ import 'package:finallyshop/categoriesnav/footwear.dart';
 import 'package:finallyshop/main.dart';
 import 'package:finallyshop/temperory.dart';
 
+import '../pages/login_page.dart';
+
 bool _switchValue=true;
 List<String> product_id=[
   '11','22','33','44','55','66','77','88'

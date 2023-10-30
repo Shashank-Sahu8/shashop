@@ -1,5 +1,6 @@
 import 'package:finallyshop/bottomnav/cart.dart';
 import 'package:finallyshop/models/model.dart';
+import 'package:finallyshop/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:finallyshop/bottomnav/home.dart';
 import 'package:finallyshop/bottomnav/account.dart';
@@ -10,6 +11,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:finallyshop/pages/Splash_Screen.dart';
 import 'package:provider/provider.dart';
 import 'package:finallyshop/bottomnav/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 int counter=0;
 bool _switchValue=true;
 void main()
@@ -35,8 +37,6 @@ class Myapp extends StatelessWidget {
     );
   }
 }
-
-
 class thispage extends StatefulWidget {
   const thispage({super.key});
 
@@ -50,7 +50,7 @@ class _thispageState extends State<thispage> {
     home(),
     categories(),
     deals(),
-    cart(),
+    login(),
     account(),
   ];
   @override
