@@ -12,10 +12,17 @@ import 'package:finallyshop/pages/Splash_Screen.dart';
 import 'package:provider/provider.dart';
 import 'package:finallyshop/bottomnav/home.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'firebase_options.dart';
 int counter=0;
 bool _switchValue=true;
-void main()
+void main() async
 {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(Myapp());
 }
 class Myapp extends StatelessWidget {

@@ -1,4 +1,6 @@
+import 'package:finallyshop/bottomnav/cart.dart';
 import 'package:finallyshop/pages/signup_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -10,10 +12,11 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  bool loading=false;
   final _formfield=GlobalKey<FormState>();
   final emailcontroller=TextEditingController();
   final password=TextEditingController();
-
+  final _auth=FirebaseAuth.instance;
   @override
   void dispose() {
     // TODO: implement dispose
@@ -21,7 +24,18 @@ class _loginState extends State<login> {
     emailcontroller.dispose();
     password.dispose();
   }
-
+void login(){
+    setState(() {
+      loading=true;
+    });
+    _auth.signInWithEmailAndPassword(email: emailcontroller.text, password: password.text.toString()).then((value){setState(() {
+      loading=false ;
+    });
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>cart()));
+      utils().toastmess(value.user!.email.toString());}).onError((error, stackTrace) {setState(() {
+      loading=false;
+    });debugPrint(error.toString());utils().toastmess(error.toString());});
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +91,7 @@ class _loginState extends State<login> {
 
                   onPressed: (){
                             if(_formfield.currentState!.validate()){
-
+                              login();
                             }
                   }
 
