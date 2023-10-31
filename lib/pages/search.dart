@@ -8,10 +8,10 @@ import 'package:finallyshop/bottomnav/deals.dart';
 import 'package:finallyshop/list.dart';
 import 'package:finallyshop/models/model.dart';
 import 'package:get/get.dart';
+import 'package:finallyshop/models/detailproduct.dart';
 
 import 'package:provider/provider.dart';
 class Search extends SearchDelegate{
-  List<String>allData=['Tools','Watches','Grocery','mobile','Iphone','Accessories','cloths','mens','Womens','Children','Books','Bag','Perfumes','Toys'];
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -28,6 +28,7 @@ class Search extends SearchDelegate{
   @override
   Widget buildSuggestions(BuildContext context) {
     final productlis=Provider.of<Products>(context);
+    final prodd=productlis.allProduct;
     final prod=query.isEmpty? productlis.allProduct:productlis.allProduct.where((p) => p.name.startsWith(query[0].toUpperCase())).toList();
     return prod.isEmpty?Padding(
       padding: const EdgeInsets.all(10.0),
@@ -36,7 +37,7 @@ class Search extends SearchDelegate{
       itemCount: prod.length,
         itemBuilder: (context,index){
         return ListTile(
-          onTap: (){showResults(context);},
+          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>detailproduct(cost: prodd[index].cost, oldcost: prodd[index].oldcost, description: prodd[index].description, image: prodd[index].image, image2: prodd[index].image2, image3: prodd[index].image3, image4: prodd[index].image4, productModel: prodd[index].productModel, name: prodd[index].name)));},
           title: Padding(
           padding: const EdgeInsets.only(top:6.0,),
           child: Column(

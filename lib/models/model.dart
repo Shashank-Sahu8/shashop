@@ -124,6 +124,100 @@ class Products with ChangeNotifier{
         image2: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/94da80a6059249629624aa4e0088612b_9366/Rivalry_RM_Low_Shoes_Black_EE4987_05_standard.jpg',
         image3: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/d142bbed034f488e850caa4e00885595_9366/Rivalry_RM_Low_Shoes_Black_EE4987.jpg'
     ),
+    Product(
+        description: 'this is new product',
+        image:
+        'https://assets.adidas.com/images/w_600,f_auto,q_auto/57d461193168475e8eecab4501127ab6_9366/Falcon_Shoes_Pink_FX7196_01_standard.jpg',
+        productModel: 'Sneakers',
+        name: 'Falcon Clear Pink',
+        oldcost: '105',
+        cost: '70',
+        image4: 'https://media.endclothing.com/media/f_auto,w_600,h_600/prodmedia/media/catalog/product/2/8/28-01-2020_adidas_falconw_clearpink_fv4660_jm_1.jpg',
+        image2: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/a8208eb34e7249f280e0aae800f486cf_9366/Falcon_Shoes_Pink_FV4660_04_standard.jpg',
+        image3: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/46f2b6a4a05740aa9e83ac5d00e45b7f_9366/Falcon_Shoes_Pink_FV8278_05_standard.jpg'
+    ),
+    Product(
+        description: 'this is new product',
+        image:
+        'https://m.media-amazon.com/images/I/81pNZrg3XmL._SY550_.jpg',
+        productModel: 'Hoodies',
+        name: 'Essentials Linear',
+        oldcost: '80',
+        cost: '60',
+        image4: 'https://m.media-amazon.com/images/I/8135nira+uL._SY550_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/816FHbomIaL._SY550_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/81gbwNER65L._SY550_.jpg'
+    ),
+    Product(
+        description: 'this is new product',
+        image:
+        'https://m.media-amazon.com/images/I/41P-MHBJ-xL._SY679_.jpg',
+        productModel: 'T-Shirt',
+        name: 'Own The Run Tee',
+        oldcost: '60',
+        cost: '40',
+        image4: 'https://m.media-amazon.com/images/I/41pkxOPT7oL._SY550_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/41E5FoSuMzL._SY550_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/41eubSrblwL._SY550_.jpg'
+    ),
+
+    Product(
+        description: 'this is new product',
+        image:
+        'https://m.media-amazon.com/images/I/71Kf9M5jEqL._SX569_.jpg',
+        productModel: 'Shorts',
+        name: 'Ultimate 365',
+        oldcost: '75',
+        cost: '50',
+        image4: 'https://m.media-amazon.com/images/I/71IUwDMMy9L._SL1500_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/71VZKGx6fRL._SL1500_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/31-MDI8LEcL.jpg'
+    ),
+    Product(
+        description: 'this is new product',
+        image:
+        'https://assets.adidas.com/images/w_600,f_auto,q_auto/91b7dd603a0d4f178221a9b601126d2d_9366/POD-S3.1_Shoes_White_DB3537_01_standard.jpg',
+        productModel: 'Sneakers',
+        name: 'Pod-S 3.1',
+        oldcost: '140',
+        cost: '100',
+        image4: 'https://m.media-amazon.com/images/I/71BK8-J4P5L._SY500_.jpg',
+        image2: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/c8ed15f67e1f4921839ba9b60112b268_9366/POD-S3.1_Shoes_White_DB3537.jpg',
+        image3: 'https://m.media-amazon.com/images/I/71tPKdVkEhL._SY500_.jpg'
+    ),
+    Product(description: 'this is new product',
+        image:
+        'https://m.media-amazon.com/images/I/91wEL6MZRYL._SX522_.jpg',
+        productModel: 'Jackets',
+        name: 'Floral Track',
+        oldcost: '140',
+        cost: '99',
+        image4: 'https://m.media-amazon.com/images/I/81cmPpF57fL._SY550_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/71ACoakiBOL._SY550_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/81wNW9Hcv2L._SY550_.jpg'
+    ),
+    Product(description: 'this is new product',
+        image:
+        'https://assets.adidas.com/images/w_600,f_auto,q_auto/5adc6dabf52a4b23a97baa060176638a_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_01_standard.jpg',
+        productModel: 'Sneakers',
+        name: 'Rivalry RM Low',
+        oldcost: '158',
+        cost: '130',
+        image4: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/590d3dfc6f7c43f2a492aa070012601b_9366/Rivalry_RM_Low_Shoes_Beige_EE4989.jpg',
+        image2: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/64515af34c5844289b5daa060178bd6f_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_05_standard.jpg',
+        image3: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/991b7aee890647449e80aa06017ee41c_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_03_standard.jpg'
+    ),
+    Product(description: 'this is new product',
+        image:
+        'https://assets.adidas.com/images/w_600,f_auto,q_auto/7bc377c6a8b549c1b823aa4e00882499_9366/Rivalry_RM_Low_Shoes_Black_EE4987_01_standard.jpg',
+        productModel: 'Sneakers',
+        name: 'Rivalry RM Low',
+        oldcost: '158',
+        cost: '130',
+        image4: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/d142bbed034f488e850caa4e00885595_9366/Rivalry_RM_Low_Shoes_Black_EE4987.jpg',
+        image2: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/94da80a6059249629624aa4e0088612b_9366/Rivalry_RM_Low_Shoes_Black_EE4987_05_standard.jpg',
+        image3: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/d142bbed034f488e850caa4e00885595_9366/Rivalry_RM_Low_Shoes_Black_EE4987.jpg'
+    ),
   ];
 ////////////////////////////// Cloths.............
   List<Product> colothsData = [
@@ -402,53 +496,49 @@ class Products with ChangeNotifier{
 
   ///////////////////////////// Trending........
   List<Product> trending = [
-    Product(
-        description: 'this is new product',
+    Product(description: 'this is new product',
         image:
-        'https://assets.reebok.com/images/w_600,f_auto,q_auto/eb31ff6778fa42e89e57ac480039b8fd_9366/Classics_Archive_Backpack_Small_Black_GN7640.jpg',
-        productModel: 'Classic',
-        name: 'Classics archive backpack',
-        oldcost: '70',
-        cost: '54',
-        image4: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/4c3801f601b647279640aaca0105c7f1_9366/Classics_Archive_Backpack_Black_FL7045_04_standard.jpg',
-        image2: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/f509c6c223e947798d50ab3601497153_9366/Classics_Archive_Backpack_Black_GD1040_01_standard.jpg',
-        image3: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/53b4eac625434cffbfc1ab1400e1f2bc_9366/Classics_Archive_Backpack_White_FL7044_04_standard.jpg'
+        'https://m.media-amazon.com/images/I/81wotFnXqLL._SX522_.jpg',
+        productModel: 'Jacket',
+        name: 'Utility field vest',
+        oldcost:'80',
+        cost: '65',
+        image4: 'https://m.media-amazon.com/images/I/81btXaUzfAL._SX522_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/81xGkExHw-L._SX522_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/91soYecyu-L._SX522_.jpg'
     ),
-    Product(
-        description: 'this is new product',
+    Product(description: 'this is new product',
         image:
-        'https://assets.reebok.com/images/w_600,f_auto,q_auto/eb31ff6778fa42e89e57ac480039b8fd_9366/Classics_Archive_Backpack_Small_Black_GN7640.jpg',
-        productModel: 'Classic',
-        name: 'Classics archive backpack',
-        oldcost: '70',
-        cost: '54',
-        image4: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/4c3801f601b647279640aaca0105c7f1_9366/Classics_Archive_Backpack_Black_FL7045_04_standard.jpg',
-        image2: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/f509c6c223e947798d50ab3601497153_9366/Classics_Archive_Backpack_Black_GD1040_01_standard.jpg',
-        image3: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/53b4eac625434cffbfc1ab1400e1f2bc_9366/Classics_Archive_Backpack_White_FL7044_04_standard.jpg'
+        'https://m.media-amazon.com/images/I/81RaPRuTSiL._SY550_.jpg',
+        productModel: 'Sweat-Shirts',
+        name: 'Myt crew sweatshirt',
+        oldcost: '50',
+        cost: '40',
+        image4: 'https://m.media-amazon.com/images/I/81FNE9-gNDL._SY550_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/61hCbiQexOL._SY550_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/71jStq0RAlL._SY550_.jpg'
     ),
-    Product(
-        description: 'this is new product',
+    Product(description: 'this is new product',
         image:
-        'https://assets.reebok.com/images/w_600,f_auto,q_auto/eb31ff6778fa42e89e57ac480039b8fd_9366/Classics_Archive_Backpack_Small_Black_GN7640.jpg',
-        productModel: 'Classic',
-        name: 'Classics archive backpack',
-        oldcost: '70',
-        cost: '54',
-        image4: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/4c3801f601b647279640aaca0105c7f1_9366/Classics_Archive_Backpack_Black_FL7045_04_standard.jpg',
-        image2: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/f509c6c223e947798d50ab3601497153_9366/Classics_Archive_Backpack_Black_GD1040_01_standard.jpg',
-        image3: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/53b4eac625434cffbfc1ab1400e1f2bc_9366/Classics_Archive_Backpack_White_FL7044_04_standard.jpg'
+        'https://m.media-amazon.com/images/I/61qK-LMwdqL._SY879_.jpg',
+        productModel: 'T-shirt',
+        name: 'Allen Iverson I3 3I Logo T-Shirt',
+        oldcost: '40',
+        cost: '30',
+        image4: 'https://m.media-amazon.com/images/I/61sO9e1xB2L._SY741_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/61V113w5M5L._SY741_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/61+mNOFM3ZL._SY741_.jpg'
     ),
-    Product(
-        description: 'this is new product',
+    Product(description: 'this is new product',
         image:
-        'https://assets.reebok.com/images/w_600,f_auto,q_auto/eb31ff6778fa42e89e57ac480039b8fd_9366/Classics_Archive_Backpack_Small_Black_GN7640.jpg',
-        productModel: 'Classic',
-        name: 'Classics archive backpack',
+        'https://m.media-amazon.com/images/I/41-6yRda71L._SX679_.jpg',
+        productModel: 'Pants',
+        name: 'knit track pants',
         oldcost: '70',
-        cost: '54',
-        image4: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/4c3801f601b647279640aaca0105c7f1_9366/Classics_Archive_Backpack_Black_FL7045_04_standard.jpg',
-        image2: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/f509c6c223e947798d50ab3601497153_9366/Classics_Archive_Backpack_Black_GD1040_01_standard.jpg',
-        image3: 'https://assets.reebok.com/images/w_600,f_auto,q_auto/53b4eac625434cffbfc1ab1400e1f2bc_9366/Classics_Archive_Backpack_White_FL7044_04_standard.jpg'
+        cost: '55',
+        image4: 'https://m.media-amazon.com/images/I/41dluSzdB0L._SX522_.jpg',
+        image2: 'https://m.media-amazon.com/images/I/41JlFA0HYvL._SX522_.jpg',
+        image3: 'https://m.media-amazon.com/images/I/41MZnptvI2L._SX522_.jpg'
     ),
 
     ];
